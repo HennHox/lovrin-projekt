@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplikacijZaPracenjeTroskova.Views.ExpenseDetailsPage"
+             Title="Detalji troška">
+    <StackLayout Padding="20">
+        <Frame BackgroundColor="#007EA7" Padding="20">
+            <StackLayout>
+                <Label Text="{Binding Expense.Name}"
+                       TextColor="White"
+                       FontSize="24"/>
+
+                <Label Text="{Binding Expense.Amount, StringFormat='{0:C}'}"
+                       TextColor="White"
+                       FontSize="20"/>
+
+                <Label Text="{Binding Expense.Category}"
+                       TextColor="White"/>
+
+                <Label Text="{Binding Expense.Description}"
+                       TextColor="White"/>
+
+                <Label Text="{Binding Expense.Date, StringFormat='{0:d}'}"
+                       TextColor="White"/>
+            </StackLayout>
+        </Frame>
+
+        <Button Text="Uredi"
+                Command="{Binding EditCommand}"
+                BackgroundColor="#00A8CC"
+                TextColor="White"
+                Margin="0,20,0,0"/>
+
+        <Button Text="Izbriši"
+                Command="{Binding DeleteCommand}"
+                BackgroundColor="#003459"
+                TextColor="White"
+                Margin="0,10,0,0"/>
+    </StackLayout>
+</ContentPage>
